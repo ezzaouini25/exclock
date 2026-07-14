@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #f0f7ea;
+    --foreground: #021515;
+    --card: #fefae0;
+    --border: #021515;
+    --primary: #003f41;
+    --primary-foreground: #fefae0;
+    --muted: #e4e4e7;
+    --muted-foreground: #71717a;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --bglight: #46ffc7;
+    --bgplay: #009c6d;
+
+  }
+
+  .dark {
+    --background: #021515;
+    --foreground: #ebfffd;
+    --card: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+    --primary: #00c58a;
+    --primary-foreground: #ffffff;
+    --muted: rgba(255, 255, 255, 0.05);
+    --muted-foreground: rgba(255, 255, 255, 0.5);
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --sbglight: #03291d;
+    --bgplay: #46ffc7;
+
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    color: var(--foreground);
+    background: var(--background);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  [dir="rtl"] .font-mono,
+  [dir="rtl"] .tabular-nums,
+  [dir="rtl"] input[type="number"],
+  [dir="rtl"] input[type="time"] {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+}
+
+
+
