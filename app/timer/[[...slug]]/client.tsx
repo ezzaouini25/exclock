@@ -347,7 +347,7 @@ function TimerPageContent({
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-tight text-foreground">
               {seoKey === 'timer' 
                 ? t.timer?.title || "Online Timer"
-                : (t as any)[`metadata_${seoKey}`]?.title || t.timer?.title || "Online Timer"}
+                : (t as any)[`metadata_${seoKey}`]?.headerTitle || t.timer?.title || "Online Timer"}
             </h1>
             <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-xl leading-relaxed">
               {seoKey === 'timer' 
