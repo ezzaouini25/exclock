@@ -300,6 +300,7 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;500;700;900&display=swap"
           rel="stylesheet"
         />
+        <meta name="msvalidate.01" content="8F816551F992A948CEC51B22FD450CC8" />
         {/* ✅ Google Tag Manager */}
         <GoogleTagManager />
       </head>
