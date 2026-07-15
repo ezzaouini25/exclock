@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import { Inter, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppLayout } from "@/components/AppLayout";
 import { en } from "@/lib/i18n/en";
@@ -324,6 +325,19 @@ export default async function RootLayout({
             {children}
           </AppLayout>
         </ThemeProvider>
+        
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-77Z0HSH1N9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-77Z0HSH1N9');
+          `}
+        </Script>
       </body>
     </html>
   );

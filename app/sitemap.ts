@@ -354,7 +354,7 @@ countdowns.forEach((slug) => {
 });
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://exclock.com';
+  const baseUrl = 'https://www.exclock.com';
 
   const entries: MetadataRoute.Sitemap = [];
 
