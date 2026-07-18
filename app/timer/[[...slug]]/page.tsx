@@ -38,25 +38,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
 
     if (meta) {
       const canonical = lang === "en"
-        ? `https://exclock.com/timer/${slug}`
-        : `https://exclock.com/${lang}/timer/${slug}`;
+        ? `https://www.exclock.com/timer/${slug}`
+        : `https://www.exclock.com/${lang}/timer/${slug}`;
 
       return {
         title: meta.title,
         description: meta.description,
         keywords: meta.keywords,
-        metadataBase: new URL("https://exclock.com"),
+        metadataBase: new URL("https://www.exclock.com"),
         alternates: {
           canonical: meta.canonical,
           languages: {
-            "en": `https://exclock.com/timer/${slug}`,
-            "fr": `https://exclock.com/fr/timer/${slug}`,
-            "es": `https://exclock.com/es/timer/${slug}`,
-            "de": `https://exclock.com/de/timer/${slug}`,
-            "it": `https://exclock.com/it/timer/${slug}`,
-            "ar": `https://exclock.com/ar/timer/${slug}`,
-            "ru": `https://exclock.com/ru/timer/${slug}`,
-            "x-default": `https://exclock.com/timer/${slug}`,
+            "en": `https://www.exclock.com/timer/${slug}`,
+            "fr": `https://www.exclock.com/fr/timer/${slug}`,
+            "es": `https://www.exclock.com/es/timer/${slug}`,
+            "de": `https://www.exclock.com/de/timer/${slug}`,
+            "it": `https://www.exclock.com/it/timer/${slug}`,
+            "ar": `https://www.exclock.com/ar/timer/${slug}`,
+            "ru": `https://www.exclock.com/ru/timer/${slug}`,
+            "x-default": `https://www.exclock.com/timer/${slug}`,
           },
         },
         openGraph: {
@@ -109,25 +109,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug?: st
   const m = t.metadata_timer;
 
   const canonical = lang === "en"
-    ? "https://exclock.com/timer"
-    : `https://exclock.com/${lang}/timer`;
+    ? "https://www.exclock.com/timer"
+    : `https://www.exclock.com/${lang}/timer`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/timer",
-        "fr": "https://exclock.com/fr/timer",
-        "es": "https://exclock.com/es/timer",
-        "de": "https://exclock.com/de/timer",
-        "it": "https://exclock.com/it/timer",
-        "ar": "https://exclock.com/ar/timer",
-        "ru": "https://exclock.com/ru/timer",
-        "x-default": "https://exclock.com/timer",
+        "en": "https://www.exclock.com/timer",
+        "fr": "https://www.exclock.com/fr/timer",
+        "es": "https://www.exclock.com/es/timer",
+        "de": "https://www.exclock.com/de/timer",
+        "it": "https://www.exclock.com/it/timer",
+        "ar": "https://www.exclock.com/ar/timer",
+        "ru": "https://www.exclock.com/ru/timer",
+        "x-default": "https://www.exclock.com/timer",
       },
     },
     openGraph: {
@@ -181,8 +181,8 @@ function TimerPresetJsonLd({ val, unit, lang }: { val: number; unit: string; lan
     name: meta?.title || `${val} ${unit} Timer`,
     description: meta?.description || `Set a ${val} ${unit} timer online.`,
     url: lang === "en"
-      ? `https://exclock.com/timer/${val}-${unit}-timer`
-      : `https://exclock.com/${lang}/timer/${val}-${unit}-timer`,
+      ? `https://www.exclock.com/timer/${val}-${unit}-timer`
+      : `https://www.exclock.com/${lang}/timer/${val}-${unit}-timer`,
     mainEntity: {
       "@type": "WebApplication",
       name: `ExClock ${val} ${unit} Timer`,
@@ -203,10 +203,10 @@ function TimerPresetJsonLd({ val, unit, lang }: { val: number; unit: string; lan
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -233,8 +233,8 @@ function TimerMainJsonLd({ lang }: { lang: Lang }) {
     name: m.title,
     description: m.description,
     url: lang === "en"
-      ? "https://exclock.com/timer"
-      : `https://exclock.com/${lang}/timer`,
+      ? "https://www.exclock.com/timer"
+      : `https://www.exclock.com/${lang}/timer`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock Online Timer",
@@ -261,10 +261,10 @@ function TimerMainJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -282,8 +282,8 @@ function TimerMainJsonLd({ lang }: { lang: Lang }) {
 
 // ─── Breadcrumb JSON-LD ───
 function BreadcrumbJsonLd({ slug, lang }: { slug?: string; lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
-  const timerUrl = lang === "en" ? "https://exclock.com/timer" : `https://exclock.com/${lang}/timer`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
+  const timerUrl = lang === "en" ? "https://www.exclock.com/timer" : `https://www.exclock.com/${lang}/timer`;
 
   const items: any[] = [
     {
@@ -306,8 +306,8 @@ function BreadcrumbJsonLd({ slug, lang }: { slug?: string; lang: Lang }) {
       const val = match[1];
       const unit = match[2];
       const presetUrl = lang === "en"
-        ? `https://exclock.com/timer/${slug}`
-        : `https://exclock.com/${lang}/timer/${slug}`;
+        ? `https://www.exclock.com/timer/${slug}`
+        : `https://www.exclock.com/${lang}/timer/${slug}`;
       items.push({
         "@type": "ListItem",
         position: 3,

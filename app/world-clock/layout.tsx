@@ -27,25 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = t.metadata_worldclock;
 
   const canonical = lang === "en" 
-    ? "https://exclock.com/world-clock" 
-    : `https://exclock.com/${lang}/world-clock`;
+    ? "https://www.exclock.com/world-clock" 
+    : `https://www.exclock.com/${lang}/world-clock`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/world-clock",
-        "fr": "https://exclock.com/fr/world-clock",
-        "es": "https://exclock.com/es/world-clock",
-        "de": "https://exclock.com/de/world-clock",
-        "it": "https://exclock.com/it/world-clock",
-        "ar": "https://exclock.com/ar/world-clock",
-        "ru": "https://exclock.com/ru/world-clock",
-        "x-default": "https://exclock.com/world-clock",
+        "en": "https://www.exclock.com/world-clock",
+        "fr": "https://www.exclock.com/fr/world-clock",
+        "es": "https://www.exclock.com/es/world-clock",
+        "de": "https://www.exclock.com/de/world-clock",
+        "it": "https://www.exclock.com/it/world-clock",
+        "ar": "https://www.exclock.com/ar/world-clock",
+        "ru": "https://www.exclock.com/ru/world-clock",
+        "x-default": "https://www.exclock.com/world-clock",
       },
     },
     openGraph: {
@@ -105,8 +105,8 @@ function WorldClockJsonLd({ lang }: { lang: Lang }) {
     name: lang === "en" ? "World Clock" : translations[lang].worldClock.title,
     description: translations[lang].metadata_worldclock.description,
     url: lang === "en" 
-      ? "https://exclock.com/world-clock" 
-      : `https://exclock.com/${lang}/world-clock`,
+      ? "https://www.exclock.com/world-clock" 
+      : `https://www.exclock.com/${lang}/world-clock`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock World Clock",
@@ -134,10 +134,10 @@ function WorldClockJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -155,10 +155,10 @@ function WorldClockJsonLd({ lang }: { lang: Lang }) {
 
 // Breadcrumb JSON-LD
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
   const worldClockUrl = lang === "en" 
-    ? "https://exclock.com/world-clock" 
-    : `https://exclock.com/${lang}/world-clock`;
+    ? "https://www.exclock.com/world-clock" 
+    : `https://www.exclock.com/${lang}/world-clock`;
 
   const structuredData = {
     "@context": "https://schema.org",

@@ -43,24 +43,24 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: m.title, template: "%s | ExClock" },
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com",
-        "fr": "https://exclock.com/fr",
-        "es": "https://exclock.com/es",
-        "de": "https://exclock.com/de",
-        "it": "https://exclock.com/it",
-        "ar": "https://exclock.com/ar",
-        "ru": "https://exclock.com/ru",
-        "x-default": "https://exclock.com",
+        "en": "https://www.exclock.com",
+        "fr": "https://www.exclock.com/fr",
+        "es": "https://www.exclock.com/es",
+        "de": "https://www.exclock.com/de",
+        "it": "https://www.exclock.com/it",
+        "ar": "https://www.exclock.com/ar",
+        "ru": "https://www.exclock.com/ru",
+        "x-default": "https://www.exclock.com",
       },
     },
     openGraph: {
       title: m.ogTitle,
       description: m.ogDescription,
-      url: lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`,
+      url: lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`,
       siteName: "ExClock",
       locale: lang === "en" ? "en_US" : `${lang}_${lang.toUpperCase()}`,
       type: "website",
@@ -149,7 +149,7 @@ function HomeJsonLd({ lang }: { lang: Lang }) {
     "@type": "WebPage",
     name: t.metadata_home.title,
     description: t.metadata_home.description,
-    url: lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`,
+    url: lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock",
@@ -177,10 +177,10 @@ function HomeJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -197,7 +197,7 @@ function HomeJsonLd({ lang }: { lang: Lang }) {
 }
 
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -325,7 +325,7 @@ export default async function RootLayout({
             {children}
           </AppLayout>
         </ThemeProvider>
-        
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-77Z0HSH1N9"
           strategy="afterInteractive"

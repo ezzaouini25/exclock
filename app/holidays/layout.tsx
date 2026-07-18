@@ -27,25 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = t.metadata_holidays;
 
   const canonical = lang === "en" 
-    ? "https://exclock.com/holidays" 
-    : `https://exclock.com/${lang}/holidays`;
+    ? "https://www.exclock.com/holidays" 
+    : `https://www.exclock.com/${lang}/holidays`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/holidays",
-        "fr": "https://exclock.com/fr/holidays",
-        "es": "https://exclock.com/es/holidays",
-        "de": "https://exclock.com/de/holidays",
-        "it": "https://exclock.com/it/holidays",
-        "ar": "https://exclock.com/ar/holidays",
-        "ru": "https://exclock.com/ru/holidays",
-        "x-default": "https://exclock.com/holidays",
+        "en": "https://www.exclock.com/holidays",
+        "fr": "https://www.exclock.com/fr/holidays",
+        "es": "https://www.exclock.com/es/holidays",
+        "de": "https://www.exclock.com/de/holidays",
+        "it": "https://www.exclock.com/it/holidays",
+        "ar": "https://www.exclock.com/ar/holidays",
+        "ru": "https://www.exclock.com/ru/holidays",
+        "x-default": "https://www.exclock.com/holidays",
       },
     },
     openGraph: {
@@ -102,8 +102,8 @@ function HolidaysJsonLd({ lang }: { lang: Lang }) {
     name: lang === "en" ? "Holiday Countdowns" : translations[lang].holidays.upcoming,
     description: translations[lang].metadata_holidays.description,
     url: lang === "en" 
-      ? "https://exclock.com/holidays" 
-      : `https://exclock.com/${lang}/holidays`,
+      ? "https://www.exclock.com/holidays" 
+      : `https://www.exclock.com/${lang}/holidays`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock Holiday Countdowns",
@@ -131,10 +131,10 @@ function HolidaysJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -152,10 +152,10 @@ function HolidaysJsonLd({ lang }: { lang: Lang }) {
 
 // Breadcrumb JSON-LD
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
   const holidaysUrl = lang === "en" 
-    ? "https://exclock.com/holidays" 
-    : `https://exclock.com/${lang}/holidays`;
+    ? "https://www.exclock.com/holidays" 
+    : `https://www.exclock.com/${lang}/holidays`;
 
   const structuredData = {
     "@context": "https://schema.org",

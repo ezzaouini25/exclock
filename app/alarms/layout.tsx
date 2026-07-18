@@ -27,25 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = t.metadata_alarms;
 
   const canonical = lang === "en" 
-    ? "https://exclock.com/alarms" 
-    : `https://exclock.com/${lang}/alarms`;
+    ? "https://www.exclock.com/alarms" 
+    : `https://www.exclock.com/${lang}/alarms`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/alarms",
-        "fr": "https://exclock.com/fr/alarms",
-        "es": "https://exclock.com/es/alarms",
-        "de": "https://exclock.com/de/alarms",
-        "it": "https://exclock.com/it/alarms",
-        "ar": "https://exclock.com/ar/alarms",
-        "ru": "https://exclock.com/ru/alarms",
-        "x-default": "https://exclock.com/alarms",
+        "en": "https://www.exclock.com/alarms",
+        "fr": "https://www.exclock.com/fr/alarms",
+        "es": "https://www.exclock.com/es/alarms",
+        "de": "https://www.exclock.com/de/alarms",
+        "it": "https://www.exclock.com/it/alarms",
+        "ar": "https://www.exclock.com/ar/alarms",
+        "ru": "https://www.exclock.com/ru/alarms",
+        "x-default": "https://www.exclock.com/alarms",
       },
     },
     openGraph: {
@@ -102,8 +102,8 @@ function AlarmsJsonLd({ lang }: { lang: Lang }) {
     name: lang === "en" ? "Alarm Clock" : translations[lang].alarms.title,
     description: translations[lang].metadata_alarms.description,
     url: lang === "en" 
-      ? "https://exclock.com/alarms" 
-      : `https://exclock.com/${lang}/alarms`,
+      ? "https://www.exclock.com/alarms" 
+      : `https://www.exclock.com/${lang}/alarms`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock Alarm Clock",
@@ -132,10 +132,10 @@ function AlarmsJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -153,10 +153,10 @@ function AlarmsJsonLd({ lang }: { lang: Lang }) {
 
 // Breadcrumb JSON-LD
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
   const alarmsUrl = lang === "en" 
-    ? "https://exclock.com/alarms" 
-    : `https://exclock.com/${lang}/alarms`;
+    ? "https://www.exclock.com/alarms" 
+    : `https://www.exclock.com/${lang}/alarms`;
 
   const structuredData = {
     "@context": "https://schema.org",

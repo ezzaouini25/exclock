@@ -255,7 +255,7 @@ export async function generateMetadata({
     cityData.name, cityData.countryName, time, timezoneFull, cityData.utcOffsetStr
   );
 
-  const canonical = `https://exclock.com/world-clock/${slug}`;
+  const canonical = `https://www.exclock.com/world-clock/${slug}`;
 
   return {
     title,

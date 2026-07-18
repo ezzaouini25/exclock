@@ -27,25 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = t.metadata_stopwatch;
 
   const canonical = lang === "en" 
-    ? "https://exclock.com/stopwatch" 
-    : `https://exclock.com/${lang}/stopwatch`;
+    ? "https://www.exclock.com/stopwatch" 
+    : `https://www.exclock.com/${lang}/stopwatch`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/stopwatch",
-        "fr": "https://exclock.com/fr/stopwatch",
-        "es": "https://exclock.com/es/stopwatch",
-        "de": "https://exclock.com/de/stopwatch",
-        "it": "https://exclock.com/it/stopwatch",
-        "ar": "https://exclock.com/ar/stopwatch",
-        "ru": "https://exclock.com/ru/stopwatch",
-        "x-default": "https://exclock.com/stopwatch",
+        "en": "https://www.exclock.com/stopwatch",
+        "fr": "https://www.exclock.com/fr/stopwatch",
+        "es": "https://www.exclock.com/es/stopwatch",
+        "de": "https://www.exclock.com/de/stopwatch",
+        "it": "https://www.exclock.com/it/stopwatch",
+        "ar": "https://www.exclock.com/ar/stopwatch",
+        "ru": "https://www.exclock.com/ru/stopwatch",
+        "x-default": "https://www.exclock.com/stopwatch",
       },
     },
     openGraph: {
@@ -102,8 +102,8 @@ function StopwatchJsonLd({ lang }: { lang: Lang }) {
     name: lang === "en" ? "Stopwatch" : translations[lang].stopwatch.title,
     description: translations[lang].metadata_stopwatch.description,
     url: lang === "en" 
-      ? "https://exclock.com/stopwatch" 
-      : `https://exclock.com/${lang}/stopwatch`,
+      ? "https://www.exclock.com/stopwatch" 
+      : `https://www.exclock.com/${lang}/stopwatch`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock Stopwatch",
@@ -131,10 +131,10 @@ function StopwatchJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -152,10 +152,10 @@ function StopwatchJsonLd({ lang }: { lang: Lang }) {
 
 // Breadcrumb JSON-LD
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
   const stopwatchUrl = lang === "en" 
-    ? "https://exclock.com/stopwatch" 
-    : `https://exclock.com/${lang}/stopwatch`;
+    ? "https://www.exclock.com/stopwatch" 
+    : `https://www.exclock.com/${lang}/stopwatch`;
 
   const structuredData = {
     "@context": "https://schema.org",

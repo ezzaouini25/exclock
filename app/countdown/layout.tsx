@@ -27,25 +27,25 @@ export async function generateMetadata(): Promise<Metadata> {
   const m = t.metadata_countdown;
 
   const canonical = lang === "en" 
-    ? "https://exclock.com/countdown" 
-    : `https://exclock.com/${lang}/countdown`;
+    ? "https://www.exclock.com/countdown" 
+    : `https://www.exclock.com/${lang}/countdown`;
 
   return {
     title: m.title,
     description: m.description,
     keywords: m.keywords,
-    metadataBase: new URL("https://exclock.com"),
+    metadataBase: new URL("https://www.exclock.com"),
     alternates: {
       canonical: m.canonical,
       languages: {
-        "en": "https://exclock.com/countdown",
-        "fr": "https://exclock.com/fr/countdown",
-        "es": "https://exclock.com/es/countdown",
-        "de": "https://exclock.com/de/countdown",
-        "it": "https://exclock.com/it/countdown",
-        "ar": "https://exclock.com/ar/countdown",
-        "ru": "https://exclock.com/ru/countdown",
-        "x-default": "https://exclock.com/countdown",
+        "en": "https://www.exclock.com/countdown",
+        "fr": "https://www.exclock.com/fr/countdown",
+        "es": "https://www.exclock.com/es/countdown",
+        "de": "https://www.exclock.com/de/countdown",
+        "it": "https://www.exclock.com/it/countdown",
+        "ar": "https://www.exclock.com/ar/countdown",
+        "ru": "https://www.exclock.com/ru/countdown",
+        "x-default": "https://www.exclock.com/countdown",
       },
     },
     openGraph: {
@@ -102,8 +102,8 @@ function CountdownJsonLd({ lang }: { lang: Lang }) {
     name: lang === "en" ? "Countdown Timer" : translations[lang].countdown.title,
     description: translations[lang].metadata_countdown.description,
     url: lang === "en" 
-      ? "https://exclock.com/countdown" 
-      : `https://exclock.com/${lang}/countdown`,
+      ? "https://www.exclock.com/countdown" 
+      : `https://www.exclock.com/${lang}/countdown`,
     mainEntity: {
       "@type": "WebApplication",
       name: "ExClock Countdown Timer",
@@ -131,10 +131,10 @@ function CountdownJsonLd({ lang }: { lang: Lang }) {
     publisher: {
       "@type": "Organization",
       name: "ExClock",
-      url: "https://exclock.com",
+      url: "https://www.exclock.com",
       logo: {
         "@type": "ImageObject",
-        url: "https://exclock.com/logo.png",
+        url: "https://www.exclock.com/logo.png",
         width: 512,
         height: 512,
       },
@@ -152,10 +152,10 @@ function CountdownJsonLd({ lang }: { lang: Lang }) {
 
 // Breadcrumb JSON-LD
 function BreadcrumbJsonLd({ lang }: { lang: Lang }) {
-  const homeUrl = lang === "en" ? "https://exclock.com" : `https://exclock.com/${lang}`;
+  const homeUrl = lang === "en" ? "https://www.exclock.com" : `https://www.exclock.com/${lang}`;
   const countdownUrl = lang === "en" 
-    ? "https://exclock.com/countdown" 
-    : `https://exclock.com/${lang}/countdown`;
+    ? "https://www.exclock.com/countdown" 
+    : `https://www.exclock.com/${lang}/countdown`;
 
   const structuredData = {
     "@context": "https://schema.org",
